@@ -4,7 +4,7 @@ from pprint import pprint
 from collections import namedtuple
 
 class NasaObject:
-"""general class to get response and collection of files from NASA API"""
+    """general class to get response and collection of files from NASA API"""
 
     def __init__(self, keywords, title, media_type, year_start, year_end):
         self.keywords = keywords
@@ -35,7 +35,7 @@ class NasaObject:
         return json_links
 
 class Image(NasaObject):
-"""subclass for selecting a collection of images, an image collection contain links to images with different resolution, links containing "orig" in name were selected, usually orig.tif or orig.jpg""" 
+    """subclass for selecting a collection of images, an image collection contain links to images with different resolution, links containing "orig" in name were selected, usually orig.tif or orig.jpg""" 
 
     def __init__(self, description, keywords, title, media_type, year_start, year_end):
         super().__init__(keywords, title, media_type, year_start, year_end)
@@ -69,7 +69,7 @@ class Image(NasaObject):
 
 
 class Video(NasaObject):
-"""subclass for selecting a collection of videos, with method for checking if results give only video files """
+    """subclass for selecting a collection of videos, with method for checking if results give only video files """
     def __init__(self, keywords, title, media_type, year_start, year_end):
             super().__init__(keywords, title, media_type, year_start, year_end)
             self.parameters = { "keywords" : self.keywords,
